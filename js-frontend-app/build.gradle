@@ -1,0 +1,20 @@
+plugins {
+    id 'org.jetbrains.kotlin.js'
+}
+
+dependencies {
+    implementation "org.jetbrains.lets-plot:lets-plot-kotlin-js:$lets_plot_kotlin_version"
+    testImplementation 'org.jetbrains.kotlin:kotlin-test-js'
+}
+
+kotlin {
+    js(LEGACY) {
+        binaries.executable()
+        browser {
+            commonWebpackConfig {
+                cssSupport.enabled = true
+            }
+        }
+//        useCommonJs()
+    }
+}

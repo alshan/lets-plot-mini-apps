@@ -1,0 +1,23 @@
+//plugins {
+//    id "org.jetbrains.kotlin.js" apply false
+//    id 'org.jetbrains.kotlin.jvm' apply false
+//}
+
+allprojects {
+    group = 'me.igor'
+    version = '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+
+        // SNAPSHOTS
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots"
+        }
+
+        // For kotlinx-html-jvm:0.7.2. and up.
+        maven {
+            url "https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven"
+        }
+    }
+}
