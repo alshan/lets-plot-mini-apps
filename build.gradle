@@ -1,7 +1,3 @@
-//plugins {
-//    id "org.jetbrains.kotlin.js" apply false
-//    id 'org.jetbrains.kotlin.jvm' apply false
-//}
 
 allprojects {
     group = 'me.igor'
@@ -9,6 +5,11 @@ allprojects {
 
     repositories {
         mavenCentral()
+
+        // local
+//        maven {
+//            url = uri("/Users/Igor/Work/lets-plot-kotlin/.maven-publish-dev-repo")
+//        }
 
         // SNAPSHOTS
         maven {
