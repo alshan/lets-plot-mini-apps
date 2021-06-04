@@ -9,7 +9,7 @@ in JVM and Kotlin-JS projects.
 - [jvm-swing-javafx-app](https://github.com/alshan/lets-plot-mini-apps/tree/main/jvm-swing-javafx-app/src/main/kotlin):
   a JVM app which renders plot to JavaFX Scene. Note: additional JavaFX dependencies needed in case JFX is not included in your JRE.
   
-- [js-frontend-app](https://github.com/alshan/lets-plot-mini-apps/tree/main/js-frontend-app/src/main/kotlin):
+- [js-frontend-app](https://github.com/alshan/lets-plot-mini-apps/tree/main/js-frontend-app):
   a Kotlin-JS app. 
   
   You can run this app using Gradle command:
