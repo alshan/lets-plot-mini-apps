@@ -16,3 +16,6 @@ in JVM and Kotlin-JS projects.
 ```
 ./gradlew :js-frontend-app:browserDevelopmentRun
 ```
+                                                         
+- [jvm-plot-export](https://github.com/alshan/lets-plot-mini-apps/tree/main/jvm-plot-export/src/main/kotlin):
+  Using `PlotSvgExport` and `PlotHtmlExport` utilities for exporting of a plot to a string in SVG and HTML formats.
