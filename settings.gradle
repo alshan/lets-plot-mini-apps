@@ -7,6 +7,5 @@ pluginManagement {
 
 include 'js-frontend-app',
         'jvm-swing-batik-app',
-        'jvm-swing-javafx-app'
-
-//enableFeaturePreview('GRADLE_METADATA')
+        'jvm-swing-javafx-app',
+        'jvm-plot-export'
