@@ -9,6 +9,6 @@ fun main() {
 
     // Export to HTML.
     // Note: if all you need is to save HTML to a file than you can just use the 'ggsave()' function.
-    val content = PlotHtmlExport.buildHtmlFromRawSpecs(p.toSpec(), scriptUrl("2.0.3"))
+    val content = PlotHtmlExport.buildHtmlFromRawSpecs(p.toSpec(), scriptUrl("2.2.0rc1"))
     openInBrowser(content)
 }

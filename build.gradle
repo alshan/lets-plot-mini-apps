@@ -7,9 +7,9 @@ allprojects {
         mavenCentral()
 
         // local
-//        maven {
-//            url = uri("/Users/Igor/Work/lets-plot-kotlin/.maven-publish-dev-repo")
-//        }
+        maven {
+            url = uri("/Users/Igor/Work/lets-plot-kotlin/.maven-publish-dev-repo")
+        }
 
         // SNAPSHOTS
         maven {
