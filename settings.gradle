@@ -6,6 +6,7 @@ pluginManagement {
 }
 
 include 'js-frontend-app',
+        'js-ir-frontend-app',
         'jvm-swing-batik-app',
         'jvm-swing-javafx-app',
         'jvm-plot-export'
