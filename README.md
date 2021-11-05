@@ -10,7 +10,7 @@ in JVM and Kotlin/JS projects.
   a JVM app which renders plot to JavaFX Scene. Note: additional JavaFX dependencies needed in case JFX is not included in your JRE.
   
 - [js-frontend-app](https://github.com/alshan/lets-plot-mini-apps/tree/main/js-frontend-app):
-  a Kotlin/JS app (Kotlin compiler LEGACY backend). 
+  a Kotlin/JS app (Kotlin LEGACY compiler). 
   
   You can run this app using Gradle command:
 ```
@@ -18,7 +18,7 @@ in JVM and Kotlin/JS projects.
 ```
                                                          
 - [js-ir-frontend-app](https://github.com/alshan/lets-plot-mini-apps/tree/main/js-ir-frontend-app):
-  a Kotlin/JS IR app (Kotlin compiler IR backend). 
+  a Kotlin/JS IR app (Kotlin IR compiler). 
   
   You can run this app using Gradle command:
 ```
