@@ -10,11 +10,19 @@ in JVM and Kotlin/JS projects.
   a JVM app which renders plot to JavaFX Scene. Note: additional JavaFX dependencies needed in case JFX is not included in your JRE.
   
 - [js-frontend-app](https://github.com/alshan/lets-plot-mini-apps/tree/main/js-frontend-app):
-  a Kotlin/JS app. 
+  a Kotlin/JS app (Kotlin compiler LEGACY backend). 
   
   You can run this app using Gradle command:
 ```
 ./gradlew :js-frontend-app:browserDevelopmentRun
+```
+                                                         
+- [js-ir-frontend-app](https://github.com/alshan/lets-plot-mini-apps/tree/main/js-ir-frontend-app):
+  a Kotlin/JS IR app (Kotlin compiler IR backend). 
+  
+  You can run this app using Gradle command:
+```
+./gradlew :js-ir-frontend-app:browserDevelopmentRun
 ```
                                                          
 - [jvm-plot-export](https://github.com/alshan/lets-plot-mini-apps/tree/main/jvm-plot-export/src/main/kotlin):
