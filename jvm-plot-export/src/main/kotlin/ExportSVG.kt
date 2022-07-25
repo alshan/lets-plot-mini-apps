@@ -1,7 +1,7 @@
 import DemoUtil.createPlot
 import DemoUtil.openInBrowser
 import jetbrains.datalore.plot.PlotSvgExport
-import jetbrains.letsPlot.intern.toSpec
+import org.jetbrains.letsPlot.intern.toSpec
 
 fun main() {
     val p = createPlot()

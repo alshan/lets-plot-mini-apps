@@ -1,6 +1,6 @@
-import jetbrains.letsPlot.geom.geomDensity
-import jetbrains.letsPlot.intern.Plot
-import jetbrains.letsPlot.letsPlot
+import org.jetbrains.letsPlot.geom.geomDensity
+import org.jetbrains.letsPlot.intern.Plot
+import org.jetbrains.letsPlot.letsPlot
 import java.awt.Desktop
 import java.io.File
 

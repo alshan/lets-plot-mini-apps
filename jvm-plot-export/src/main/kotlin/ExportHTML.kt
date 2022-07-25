@@ -2,8 +2,8 @@ import DemoUtil.createPlot
 import DemoUtil.openInBrowser
 import jetbrains.datalore.plot.PlotHtmlExport
 import jetbrains.datalore.plot.PlotHtmlHelper.scriptUrl
-import jetbrains.letsPlot.export.VersionChecker
-import jetbrains.letsPlot.intern.toSpec
+import org.jetbrains.letsPlot.export.VersionChecker
+import org.jetbrains.letsPlot.intern.toSpec
 
 fun main() {
     val p = createPlot()
