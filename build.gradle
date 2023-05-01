@@ -1,7 +1,7 @@
 
 allprojects {
-    group = 'me.igor'
-    version = '1.0-SNAPSHOT'
+//    group = 'me.igor'
+//    version = '1.0-SNAPSHOT'
 
     repositories {
         mavenCentral()
