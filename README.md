@@ -4,15 +4,15 @@ This repository contains examples of using the [Lets-Plot Kotlin API](https://gi
 in JVM and Kotlin/JS projects.
 
 - #### [jvm-swing-batik-app](https://github.com/alshan/lets-plot-mini-apps/blob/main/jvm-swing-batik-app/src/main/kotlin/Main.kt):
-  A JVM/Swing app which uses Apache Batik for plot rendering.
+  A JVM/Swing app which uses [Apache Batik SVG Toolkit](https://xmlgraphics.apache.org/batik/) for plot rendering.
   
 - #### [jvm-swing-javafx-app](https://github.com/alshan/lets-plot-mini-apps/blob/main/jvm-swing-javafx-app/src/main/kotlin/Main.kt):
-  A JVM/Swing app which renders plot to JavaFX Scene inside `javafx.embed.swing.JFXPanel`.
+  A JVM/Swing app which renders plot to  [JavaFX](https://en.wikipedia.org/wiki/JavaFX) scene inside `javafx.embed.swing.JFXPanel`.
   
 - #### [jvm-javafx-app](https://github.com/alshan/lets-plot-mini-apps/tree/main/jvm-javafx-app):
-  A JavaFX app which renders plot to JavaFX Scene inside `javafx.embed.swing.JFXPanel`.
+  A  [JavaFX](https://en.wikipedia.org/wiki/JavaFX) app which renders plot to JavaFX scene inside `javafx.embed.swing.JFXPanel`.
 
-  The Swing panel with plot in then embedded into a JavaFX application via `javafx.embed.swing.SwingNode`.
+  The Swing panel with a plot in it then embedded into a JavaFX application via `javafx.embed.swing.SwingNode`.
     
 - #### [js-frontend-app](https://github.com/alshan/lets-plot-mini-apps/tree/main/js-frontend-app):
   A Kotlin/JS app (Kotlin LEGACY compiler). 

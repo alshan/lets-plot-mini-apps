@@ -1,19 +1,16 @@
 
 allprojects {
-//    group = 'me.igor'
-//    version = '1.0-SNAPSHOT'
-
     repositories {
         mavenCentral()
 
         // local
-        maven {
-            url = uri("/Users/Igor/Work/lets-plot-kotlin/.maven-publish-dev-repo")
-        }
+//        maven {
+//            url = uri("/Users/Igor/Work/lets-plot-kotlin/.maven-publish-dev-repo")
+//        }
 
         // SNAPSHOTS
-        maven {
-            url "https://oss.sonatype.org/content/repositories/snapshots"
-        }
+//        maven {
+//            url "https://oss.sonatype.org/content/repositories/snapshots"
+//        }
     }
 }
