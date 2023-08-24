@@ -3,10 +3,10 @@ import javafx.embed.swing.SwingNode
 import javafx.scene.Scene
 import javafx.scene.layout.StackPane
 import javafx.stage.Stage
-import jetbrains.datalore.plot.MonolithicCommon
-import jetbrains.datalore.vis.swing.jfx.DefaultPlotPanelJfx
+import org.jetbrains.letsPlot.core.util.MonolithicCommon
 import org.jetbrains.letsPlot.geom.geomDensity
 import org.jetbrains.letsPlot.intern.toSpec
+import org.jetbrains.letsPlot.jfx.plot.component.DefaultPlotPanelJfx
 import org.jetbrains.letsPlot.letsPlot
 import javax.swing.JPanel
 
