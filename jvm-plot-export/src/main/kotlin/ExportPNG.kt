@@ -1,6 +1,5 @@
 import DemoUtil.createPlot
 import DemoUtil.openInBrowser
-import org.jetbrains.letsPlot.awt.plot.PlotSvgExport
 import org.jetbrains.letsPlot.commons.encoding.Base64
 import org.jetbrains.letsPlot.core.plot.export.PlotImageExport
 import org.jetbrains.letsPlot.intern.toSpec
