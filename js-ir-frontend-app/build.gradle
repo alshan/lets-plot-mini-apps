@@ -9,12 +9,7 @@ dependencies {
 
 kotlin {
     js(IR) {
+        browser()
         binaries.executable()
-//        browser {
-//            commonWebpackConfig {
-//                cssSupport.enabled = true
-//            }
-//        }
-//        useCommonJs()
     }
 }
