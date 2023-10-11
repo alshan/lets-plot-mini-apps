@@ -5,3 +5,6 @@
 .DS_Store
 **/build
 **/out
+
+kotlin-js-store/*
+lets-plot-images/*
