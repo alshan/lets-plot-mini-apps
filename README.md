@@ -13,7 +13,7 @@ in JVM and Kotlin/JS applications.
   A [JavaFX](https://en.wikipedia.org/wiki/JavaFX) app which renders plot to JavaFX scene inside a `javafx.embed.swing.JFXPanel`, \
   then embeds it into a JavaFX application using a `javafx.embed.swing.SwingNode`.
     
-- #### [js-ir-frontend-app](https://github.com/alshan/lets-plot-mini-apps/tree/main/js-frontend-app):
+- #### [js-frontend-app](https://github.com/alshan/lets-plot-mini-apps/tree/main/js-frontend-app):
   A Kotlin/JS app. 
                                                          
 - #### [jvm-plot-export](https://github.com/alshan/lets-plot-mini-apps/tree/main/jvm-plot-export/src/main/kotlin):
