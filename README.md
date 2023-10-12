@@ -17,5 +17,5 @@ in JVM and Kotlin/JS applications.
   A Kotlin/JS app. 
                                                          
 - #### [jvm-plot-export](https://github.com/alshan/lets-plot-mini-apps/tree/main/jvm-plot-export/src/main/kotlin):
-  Runnable examples that show how to export a plot to SVG, HTML or PNG image using  
+  Runnable examples that show how to export plot to an SVG, HTML or PNG image using  
   `PlotSvgExport`, `PlotHtmlExport` or `PlotImageExport` utilities.                  
