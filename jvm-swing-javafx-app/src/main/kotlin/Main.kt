@@ -55,7 +55,9 @@ fun main() {
             plotButtonGroup.add(
                 JRadioButton(key, key == selectedPlotKey).apply {
                     addActionListener {
-                        controller.plotKey = this.text
+                        Platform.runLater {
+                            controller.plotKey = this.text
+                        }
                     }
                 }
             )
@@ -72,12 +74,16 @@ fun main() {
         val aspectRadioButtonGroup = ButtonGroup()
         aspectRadioButtonGroup.add(JRadioButton("Original", false).apply {
             addActionListener {
-                controller.preserveAspectRadio = true
+                Platform.runLater {
+                    controller.preserveAspectRadio = true
+                }
             }
         })
         aspectRadioButtonGroup.add(JRadioButton("Fit container", true).apply {
             addActionListener {
-                controller.preserveAspectRadio = false
+                Platform.runLater {
+                    controller.preserveAspectRadio = false
+                }
             }
         })
 

@@ -4,9 +4,6 @@ plugins {
     id( "org.openjfx.javafxplugin")
 }
 
-//val jfx_version = "17"
-//val jfxVersion = extra["jfx.version"] as String
-
 javafx {
     version = extra["jfx.version"] as String
     modules = listOf( "javafx.controls", "javafx.swing" )
