@@ -8,8 +8,7 @@ val slf4jVersion = extra["slf4j.version"] as String
 
 dependencies {
     implementation("org.jetbrains.lets-plot:lets-plot-kotlin-jvm:$letsPlotKotlinVersion")
-    implementation("org.jetbrains.lets-plot:platf-awt-jvm:$letsPlotVersion")
-    implementation("org.jetbrains.lets-plot:deprecated-in-v4-jvm:$letsPlotVersion")
+    implementation("org.jetbrains.lets-plot:platf-awt:$letsPlotVersion")
 
     //    For PNG export demo
     implementation("org.jetbrains.lets-plot:lets-plot-image-export:$letsPlotVersion")
