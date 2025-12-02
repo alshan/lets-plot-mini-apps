@@ -146,7 +146,7 @@ private class Controller(
     }
 
     fun createPlotPanel(): JPanel {
-        // Make sure JavaFX event thread won't get killed after JFXPanel is destroyed.
+        // Make sure the JavaFX event thread won't get killed after JFXPanel is destroyed.
         Platform.setImplicitExit(false)
 
         val rawSpec = plots[plotKey]!!.toSpec()
