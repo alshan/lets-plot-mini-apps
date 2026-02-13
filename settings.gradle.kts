@@ -18,6 +18,6 @@ pluginManagement {
 
 include("js-frontend-app")
 include("jvm-swing-batik-app")
-include("jvm-swing-javafx-app")
+include("jvm-swing-app")
 include("jvm-javafx-app")
 include("jvm-plot-export")
