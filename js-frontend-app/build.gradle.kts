@@ -9,9 +9,9 @@ kotlin {
     }
 
 // Make sure the correct version of Lets-Plot JS is set in ./resources/index.html
-//    val letsPlotVersion = extra["letsPlot.version"] as String
+//    val letsPlotVersion = project.property("letsPlot.version") as String
 
-    val letsPlotKotlinVersion = extra["letsPlotKotlin.version"] as String
+    val letsPlotKotlinVersion = project.property("letsPlotKotlin.version") as String
 
     sourceSets {
         named("jsMain") {

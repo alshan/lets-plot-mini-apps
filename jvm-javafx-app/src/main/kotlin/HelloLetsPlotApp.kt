@@ -4,17 +4,17 @@ import javafx.embed.swing.SwingNode
 import javafx.scene.Scene
 import javafx.scene.layout.StackPane
 import javafx.stage.Stage
+import org.jetbrains.letsPlot.awt.plot.swing.SwingPlotPanel
 import org.jetbrains.letsPlot.core.util.MonolithicCommon
 import org.jetbrains.letsPlot.geom.geomDensity
 import org.jetbrains.letsPlot.intern.toSpec
-import org.jetbrains.letsPlot.jfx.plot.component.DefaultPlotPanelJfx
 import org.jetbrains.letsPlot.letsPlot
 import javax.swing.JPanel
 import javax.swing.SwingUtilities
 
 class HelloLetsPlotApp : Application() {
     override fun start(primaryStage: Stage) {
-        // Make sure JavaFX event thread won't get killed after JFXPanel is destroyed.
+        // Make sure the JavaFX event thread won't get killed after JFXPanel is destroyed.
         Platform.setImplicitExit(false)
 
         primaryStage.title = "Lets-Plot in JavaFX Application Demo"
@@ -22,7 +22,7 @@ class HelloLetsPlotApp : Application() {
         val root = StackPane()
         val swingNode = SwingNode()
 
-        // Create plot panel in Swing thread
+        // Create a plot panel in the Swing thread
         SwingUtilities.invokeLater {
             val plotSwingPanel = createPlotPanel()
             swingNode.content = plotSwingPanel
@@ -52,7 +52,7 @@ class HelloLetsPlotApp : Application() {
             val rawSpec = plot.toSpec()
             val processedSpec = MonolithicCommon.processRawSpecs(rawSpec, frontendOnly = false)
 
-            return DefaultPlotPanelJfx(
+            return SwingPlotPanel(
                 processedSpec = processedSpec,
                 preserveAspectRatio = false,
                 preferredSizeFromPlot = false,

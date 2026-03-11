@@ -1,7 +1,8 @@
-import javafx.application.Platform
+import org.jetbrains.letsPlot.awt.plot.component.CenteredPlotPanel
+import org.jetbrains.letsPlot.awt.plot.swing.SwingPlotPanel
 import org.jetbrains.letsPlot.commons.registration.Disposable
 import org.jetbrains.letsPlot.core.util.MonolithicCommon
-import org.jetbrains.letsPlot.jfx.plot.component.DefaultPlotPanelJfx
+import org.jetbrains.letsPlot.core.util.PlotSizeHelper
 import org.jetbrains.letsPlot.geom.geomDensity
 import org.jetbrains.letsPlot.geom.geomHistogram
 import org.jetbrains.letsPlot.intern.Plot
@@ -43,7 +44,7 @@ fun main() {
         false
     )
 
-    val window = JFrame("Example App (Swing-JavaFX)")
+    val window = JFrame("Example App (pure Swing)")
     window.defaultCloseOperation = EXIT_ON_CLOSE
     window.contentPane.layout = BoxLayout(window.contentPane, BoxLayout.Y_AXIS)
 
@@ -55,9 +56,7 @@ fun main() {
             plotButtonGroup.add(
                 JRadioButton(key, key == selectedPlotKey).apply {
                     addActionListener {
-                        Platform.runLater {
-                            controller.plotKey = this.text
-                        }
+                        controller.plotKey = this.text
                     }
                 }
             )
@@ -74,16 +73,12 @@ fun main() {
         val aspectRadioButtonGroup = ButtonGroup()
         aspectRadioButtonGroup.add(JRadioButton("Original", false).apply {
             addActionListener {
-                Platform.runLater {
-                    controller.preserveAspectRadio = true
-                }
+                controller.preserveAspectRadio = true
             }
         })
         aspectRadioButtonGroup.add(JRadioButton("Fit container", true).apply {
             addActionListener {
-                Platform.runLater {
-                    controller.preserveAspectRadio = false
-                }
+                controller.preserveAspectRadio = false
             }
         })
 
@@ -141,18 +136,15 @@ private class Controller(
 
             // build
             container.add(createPlotPanel())
-            container.parent?.revalidate()
+            container.revalidate()
         }
     }
 
     fun createPlotPanel(): JPanel {
-        // Make sure the JavaFX event thread won't get killed after JFXPanel is destroyed.
-        Platform.setImplicitExit(false)
-
-        val rawSpec = plots[plotKey]!!.toSpec()
+        val rawSpec = plots.getValue(plotKey).toSpec()
         val processedSpec = MonolithicCommon.processRawSpecs(rawSpec, frontendOnly = false)
 
-        return DefaultPlotPanelJfx(
+        val plotPanel = SwingPlotPanel(
             processedSpec = processedSpec,
             preserveAspectRatio = preserveAspectRadio,
             preferredSizeFromPlot = false,
@@ -162,5 +154,10 @@ private class Controller(
                 println("[Example App] $message")
             }
         }
+
+        return CenteredPlotPanel(
+            plotPanel,
+            figurePanelDefaultSize = PlotSizeHelper.figurePanelSizeDefault(processedSpec)
+        )
     }
 }

@@ -9,7 +9,7 @@ fun main() {
     val p = createPlot()
 
     // ------------------------------------------------------------------
-    // Note: To save plot to an HTML file just use the 'ggsave()' function.
+    // Note: To save plot to an HTML file, just use the 'ggsave()' function.
     // ------------------------------------------------------------------
 
     val content = PlotHtmlExport.buildHtmlFromRawSpecs(p.toSpec(), scriptUrl(VersionChecker.letsPlotJsVersion))

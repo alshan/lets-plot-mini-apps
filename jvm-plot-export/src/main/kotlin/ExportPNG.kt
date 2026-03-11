@@ -1,14 +1,14 @@
 import DemoUtil.createPlot
 import DemoUtil.openInBrowser
+import org.jetbrains.letsPlot.awt.plot.PlotImageExport
 import org.jetbrains.letsPlot.commons.encoding.Base64
-import org.jetbrains.letsPlot.core.plot.export.PlotImageExport
 import org.jetbrains.letsPlot.intern.toSpec
 
 fun main() {
     val p = createPlot()
 
     // ------------------------------------------------------------------
-    // Note: To save plot to a PNG file just use the 'ggsave()' function.
+    // Note: To save plot to a PNG file, just use the 'ggsave()' function.
     // ------------------------------------------------------------------
 
     val image = PlotImageExport.buildImageFromRawSpecs(
