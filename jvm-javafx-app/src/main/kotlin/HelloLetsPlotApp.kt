@@ -14,7 +14,7 @@ import javax.swing.SwingUtilities
 
 class HelloLetsPlotApp : Application() {
     override fun start(primaryStage: Stage) {
-        // Make sure JavaFX event thread won't get killed after JFXPanel is destroyed.
+        // Make sure the JavaFX event thread won't get killed after JFXPanel is destroyed.
         Platform.setImplicitExit(false)
 
         primaryStage.title = "Lets-Plot in JavaFX Application Demo"
@@ -22,7 +22,7 @@ class HelloLetsPlotApp : Application() {
         val root = StackPane()
         val swingNode = SwingNode()
 
-        // Create a plot panel in Swing thread
+        // Create a plot panel in the Swing thread
         SwingUtilities.invokeLater {
             val plotSwingPanel = createPlotPanel()
             swingNode.content = plotSwingPanel
