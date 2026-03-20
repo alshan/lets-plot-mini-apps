@@ -1,6 +1,8 @@
 import org.jetbrains.letsPlot.awt.plot.component.CenteredPlotPanel
 import org.jetbrains.letsPlot.awt.plot.swing.SwingPlotPanel
+import org.jetbrains.letsPlot.awt.sandbox.SandboxToolbarAwt
 import org.jetbrains.letsPlot.commons.registration.Disposable
+import org.jetbrains.letsPlot.core.plot.builder.interact.tools.WithFigureModel
 import org.jetbrains.letsPlot.core.util.MonolithicCommon
 import org.jetbrains.letsPlot.core.util.PlotSizeHelper
 import org.jetbrains.letsPlot.geom.geomDensity
@@ -37,18 +39,24 @@ fun main() {
 
         )
 
-    val selectedPlotKey = plots.keys.first()
-    val controller = Controller(
-        plots,
-        selectedPlotKey,
-        false
-    )
-
-    val window = JFrame("Example App (pure Swing)")
+    val window = JFrame("Simple Swing App")
     window.defaultCloseOperation = EXIT_ON_CLOSE
     window.contentPane.layout = BoxLayout(window.contentPane, BoxLayout.Y_AXIS)
 
-    // Add controls
+    // Content
+
+    val plotContainerPanel = JPanel(GridLayout())
+    val selectedPlotKey = plots.keys.first()
+    val toolbar = SandboxToolbarAwt()
+
+    val controller = Controller(
+        plots,
+        initialPlotKey = selectedPlotKey,
+        initialPreserveAspectRadio = false,
+        toolbar = toolbar,
+        plotContainerPanel = plotContainerPanel,
+    )
+
     val controlsPanel = Box.createHorizontalBox().apply {
         // Plot selector
         val plotButtonGroup = ButtonGroup()
@@ -89,18 +97,22 @@ fun main() {
             }
         })
     }
+
+
+    // Add toolbar
+    window.contentPane.add(toolbar)
+
+    // Add controls
     window.contentPane.add(controlsPanel)
 
     // Add plot panel
-    val plotContainerPanel = JPanel(GridLayout())
     window.contentPane.add(plotContainerPanel)
 
-    controller.plotContainerPanel = plotContainerPanel
     controller.rebuildPlotComponent()
 
     SwingUtilities.invokeLater {
         window.pack()
-        window.size = Dimension(850, 400)
+        window.size = Dimension(850, 500)
         window.setLocationRelativeTo(null)
         window.isVisible = true
     }
@@ -109,9 +121,10 @@ fun main() {
 private class Controller(
     private val plots: Map<String, Plot>,
     initialPlotKey: String,
-    initialPreserveAspectRadio: Boolean
+    initialPreserveAspectRadio: Boolean,
+    val toolbar: SandboxToolbarAwt,
+    val plotContainerPanel: JPanel,
 ) {
-    var plotContainerPanel: JPanel? = null
     var plotKey: String = initialPlotKey
         set(value) {
             field = value
@@ -124,8 +137,8 @@ private class Controller(
         }
 
     fun rebuildPlotComponent() {
-        plotContainerPanel?.let {
-            val container = plotContainerPanel!!
+        plotContainerPanel.let {
+            val container = plotContainerPanel
             // cleanup
             for (component in container.components) {
                 if (component is Disposable) {
@@ -135,7 +148,15 @@ private class Controller(
             container.removeAll()
 
             // build
-            container.add(createPlotPanel())
+            val plotPanel = createPlotPanel()
+            container.add(plotPanel)
+
+            // attach toolbar
+            toolbar.let { tb ->
+                val figureModel = (plotPanel as WithFigureModel).figureModel
+                tb.attach(figureModel)
+            }
+
             container.revalidate()
         }
     }
