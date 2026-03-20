@@ -8,6 +8,12 @@ in JVM and Kotlin/JS applications.
 
 - #### [jvm-swing-batik-app](https://github.com/alshan/lets-plot-mini-apps/blob/main/jvm-swing-batik-app/src/main/kotlin/Main.kt):
   A JVM/Swing app which uses [Apache Batik SVG Toolkit](https://xmlgraphics.apache.org/batik/) for plot rendering.
+>
+> **Note:**
+> 
+> The Batik-based rendering is now obsolete and will be deprecated and then removed in the future. \
+> We recommend using the default AWT-based rendering instead.
+> 
   
 - #### [jvm-javafx-app](https://github.com/alshan/lets-plot-mini-apps/tree/main/jvm-javafx-app):
   A [JavaFX](https://en.wikipedia.org/wiki/JavaFX) app which hosts a Swing plot panel inside a `javafx.embed.swing.SwingNode`.
